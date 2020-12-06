@@ -4,13 +4,18 @@
   background-color: rgb(245,245,245);
 }
 #kuibu{
-  font-size: 50rpx;
+  position: relative;
+  font-size: 100rpx;
   font-family: cursive;
+  top: 50rpx;
+  left: 200rpx;
 }
 #img{
-  width: 50rpx;
-  height: 50rpx;
-
+  position: relative;
+  width: 150rpx;
+  height: 150rpx;
+  top: 90rpx;
+  left: 200rpx;
 }
 #t1{
   width:100%;
