@@ -1,19 +1,33 @@
 {
   "pages": [
-    "pages/test/test",
-    "pages/index/index",
-    "pages/userConsole/userConsole",
-    "pages/storageConsole/storageConsole",
-    "pages/databaseGuide/databaseGuide",
-    "pages/addFunction/addFunction",
-    "pages/deployFunctions/deployFunctions",
-    "pages/chooseLib/chooseLib",
-    "pages/openapi/openapi",
-    "pages/openapi/serverapi/serverapi",
-    "pages/openapi/callback/callback",
-    "pages/openapi/cloudid/cloudid",
-    "pages/im/im",
-    "pages/im/room/room"
+    "pages/login/login",
+    "pages/register/register",
+    "pages/resetPwd/resetPwd",
+
+    "pages/mainPage/main/main",
+    "pages/mainPage/accMile/accMile",
+    "pages/mainPage/joinClass/joinClass",
+    "pages/mainPage/finishRun/finishRun",
+    "pages/mainPage/faceIden/faceIden",
+
+    "pages/Mine/my/my",
+    "pages/Mine/updatePwd/updatePwd",
+    "pages/Mine/connectAdm/connectAdm",
+    "pages/Mine/announceMent/announceMent",
+    "pages/Mine/runHis/runHis",
+
+    "pages/Adminer/admin/admin",
+    "pages/Adminer/adminSel/adminSel",
+    "pages/Adminer/adminUpdate/adminUpdate",
+    "pages/Adminer/adminCanel/adminCanel",
+    "pages/Adminer/adminReset/adminReset",
+
+    "pages/Teacher/tea/tea",
+    "pages/Teacher/publishNotice/publishNotice",
+    "pages/Teacher/classRate/classRate",
+    "pages/Teacher/createClass",
+    "pages/Teacher/updatePwd"
+   
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
