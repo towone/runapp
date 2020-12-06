@@ -12,7 +12,7 @@
 <button bindtap="goto_index" id="btn1" form-type="submit" ><text>登陆</text></button>
 </form>
 
-<button bindtap="goto_zhuce" id="btn2"><text>注册</text></button>
-<button bindtap="goto_update" id="btn3"><text>忘记密码</text></button>
+<button bindtap="goto_zhuce" id="btn2" bindtap="register"><text>注册</text></button>
+<button bindtap="goto_update" id="btn3" bindtap="forgetPwd"><text>忘记密码</text></button>
 
 </view>

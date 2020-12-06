@@ -4,16 +4,30 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
+  data:{
+    userListInfo:[{
+      icon:"/images/跑步记录.png",
+      text:'跑步记录'
+    },{
+      icon:"/images/通知公告.png",
+      text:'通知公告'
+    },{
+      icon:"/images/修改密码.png",
+      text:'修改密码'
+    },{
+      icon:"/images/联系客服.png",
+      text:'联系客服'
+    }
+    ]
+      },
+    onLoad: function(){
+      var that = this
+      wx.getUserInfo(function (userInfo){
+        that.setData({
+          userInfo:userInfo
+        })
+      })
+    },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

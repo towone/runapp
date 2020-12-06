@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    acc:'',
+    pwd:''
   },
 
   /**
@@ -21,7 +22,34 @@ Page({
   onReady: function () {
 
   },
+accinput:function(e){
+  this.setData({
+  acc:e.detail.value,
+})
 
+},
+pwdinput:function(e){
+this.setData({
+  pwd:e.detail.value
+})
+
+},
+applyReset:function(){
+const db=wx.cloud.database();
+
+db.collection('resetPwd').add({
+  data:{
+    Acc:this.data.acc,
+    Pwd:this.data.pwd
+  },
+  success: res => {
+    console.log('成功！')
+  },
+  fail:err=>{
+    console.log('失败！'+acc+''+pwd)
+  }
+})
+},
   /**
    * 生命周期函数--监听页面显示
    */

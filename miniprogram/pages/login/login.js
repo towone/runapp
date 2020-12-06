@@ -79,7 +79,16 @@ db.collection('student').where({
   onReady: function () {
 
   },
-
+register:function(){
+  wx.navigateTo({
+    url: '../register/register'
+  })
+},
+forgetPwd:function(){
+wx.navigateTo({
+  url: '../resetPwd/resetPwd'
+})
+},
   /**
    * 生命周期函数--监听页面显示
    */
