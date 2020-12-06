@@ -21,10 +21,51 @@ passwordInput: function (e) {
     password: e.detail.value
   })
 },
-goto_index: function (){
-var that =this;
-console.log(that.data.username)
+goto_index: function () {
+  var that = this;
+  if (this.data.username.length == 0 || this.data.password.length == 0) {
+    wx.showToast({
+      title: '账号或密码不能为空',
+      icon: 'none',
+      duration: 2000
+    })
+  } else {
+    const db = wx.cloud.database();
+    const testDB = wx.cloud.database({
+      env: 'hsb'
+    });
+    const todos = db.collection('student');
+    const _ = db.command
+    console.log(that.data.password)
+db.collection('student').where({
+  Sid:that.data.username,
+   Spw:that.data.password
+})
+.get({
+  success: function(res) {
+    if (res.data.length >0) {
+      // var unitName = res.data.data.User.unitName;
+      // var unitId = res.data.data.User.unitId;
+      // wx.setStorageSync('unitId', unitId);
+      // wx.setStorageSync('unitName', unitName);
+      wx.redirectTo({
+        url: '../mainPage/main/main'
+      })
+    } else {
+      console.log(res.data.length);
+      wx.showToast({
+        title: '账号不存在或密码错误',
+        icon: 'none',
+        duration: 2000
+      })
+    }
+
+  }
+
+})
+  }
 },
+
   /**
    * 生命周期函数--监听页面加载
    */
