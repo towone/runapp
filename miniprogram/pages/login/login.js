@@ -5,9 +5,26 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    username: '',
+    password: ''
   },
+// 获取输入账号 
+usernameInput: function (e) {
+  this.setData({
+    username: e.detail.value
+  })
+},
 
+// 获取输入密码 
+passwordInput: function (e) {
+  this.setData({
+    password: e.detail.value
+  })
+},
+goto_index: function (){
+var that =this;
+console.log(that.data.username)
+},
   /**
    * 生命周期函数--监听页面加载
    */
