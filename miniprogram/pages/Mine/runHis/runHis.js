@@ -5,14 +5,18 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    listData:[
+      {"code":"2020/12/17","text":"3km","type":"13'56"},
+      {"code":"02","text":"text2","type":"type2"},
+      {"code":"03","text":"text3","type":"type3"},
+      {"code":"04","text":"text4","type":"type4"},
+      {"code":"05","text":"text5","type":"type5"},
+      {"code":"06","text":"text6","type":"type6"},
+      {"code":"07","text":"text7","type":"type7"}
+    ]
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  onLoad: function () {
+    console.log('onLoad') 
   },
 
   /**

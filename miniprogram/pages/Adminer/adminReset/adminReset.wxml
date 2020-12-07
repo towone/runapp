@@ -1,2 +1,22 @@
-<!--pages/Adminer/adminReset/adminReset.wxml-->
-<text>pages/Adminer/adminReset/adminReset.wxml</text>
+<view style="margin-top:{{statusBarHeight}}px;padding-top:44px">
+  <view class="top-bg"></view>
+  <view class="box-list">
+    <view class="box-title-row">
+      <view class="box-column1">日期</view>
+      <view class="box-column2">学号</view>
+      <view class="box-column3">姓名</view>
+      <view class="box-column4">状态</view>
+      <view class="box-column-end">操作</view>
+    </view>
+    <view wx:for="{{list}}" wx:key="id" class="box-data-row">
+      <view class="box-column1">{{item.date}}</view>
+      <view class="box-column2">{{item.number}}</view>
+      <view class="box-column3">{{item.name}}</view>
+      <view class="box-column4">
+        <view class="statusF58B85">{{item.statusName}}</view>
+      </view>
+      <view class="box-column-end c85bb58">删除</view>
+    </view>
+  </view>
+</view>
+<button id="btn1" form-type="submit"><text>确认重置密码</text></button>

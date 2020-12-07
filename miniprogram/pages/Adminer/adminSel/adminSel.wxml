@@ -1,2 +1,26 @@
-<!--pages/Adminer/adminSel/adminSel.wxml-->
-<text>pages/Adminer/adminSel/adminSel.wxml</text>
+<view class='page_row' bindtap="suo">  
+  <view class="search">  
+    <view class="df search_arr">  
+      <icon class="searchcion" size='20' type='search'></icon>  
+      <input class="" disabled placeholder="请输入学号" value="{{searchValue}}"/>  
+    </view>  
+  </view>  
+  <view class='sousuo'>搜索</view>  
+</view> 
+<view style="margin-top:{{statusBarHeight}}px;padding-top:44px">
+  <view class="top-bg"></view>
+  <view class="box-list">
+    <view class="box-title-row">
+      <view class="box-column1">学号</view>
+      <view class="box-column2">姓名</view>
+      <view class="box-column3">完成</view>
+      <view class="box-column4">剩余</view>
+    </view>
+    <view wx:for="{{list}}" wx:key="id" class="box-data-row">
+      <view class="box-column1">{{item.number}}</view>
+      <view class="box-column2">{{item.name}}</view>
+      <view class="box-column3">{{item.finish}}</view>
+      <view class="box-column4">{{item.remain}}</view>
+    </view>
+  </view>
+</view>

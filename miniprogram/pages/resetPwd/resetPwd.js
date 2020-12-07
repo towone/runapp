@@ -35,20 +35,46 @@ this.setData({
 
 },
 applyReset:function(){
-const db=wx.cloud.database();
+  const db=wx.cloud.database();
 
-db.collection('resetPwd').add({
-  data:{
-    Acc:this.data.acc,
-    Pwd:this.data.pwd
-  },
-  success: res => {
-    console.log('成功！')
-  },
-  fail:err=>{
-    console.log('失败！'+acc+''+pwd)
+db.collection('resetPwd').where({
+  Acc:this.data.acc,
+  Pwd:this.data.pwd
+}).get({
+  success:(res)=>{
+    if(res.data.length!=0){
+      console.log('你已经重置过密码！')
+    }
+    else{
+      db.collection('student').where({
+        NUM:this.data.acc,
+        sixID:this.data.pwd
+      }).get({
+        success:(res)=>{
+          if(res.data.length==0){
+            console.log('学号或身份证后六位输入错误！')
+          }
+          else{
+            db.collection('resetPwd').add({
+              data:{
+                Acc:this.data.acc,
+                Pwd:this.data.pwd
+              },
+              success:function(res){
+                console.log('申请成功！')
+              }
+            })
+          }
+        }
+      })
+      
+    }
   }
 })
+
+  
+
+
 },
   /**
    * 生命周期函数--监听页面显示

@@ -5,7 +5,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    //顶部安全距离（状态栏高度）
+    statusBarHeight: wx.getSystemInfoSync().statusBarHeight,
+    list: [
+      {id: 1,number:'201831062214',name:'侯金凯',finish:'100km',remain:'80km'},
+      {id: 1,number:'201831062214',name:'侯金凯',finish:'100km',remain:'80km'},
+      {id: 1,number:'201831062214',name:'侯金凯',finish:'100km',remain:'80km'},
+      {id: 1,number:'201831062214',name:'侯金凯',finish:'100km',remain:'80km'},
+      
+    ]
   },
 
   /**

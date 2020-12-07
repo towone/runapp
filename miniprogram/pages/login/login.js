@@ -48,11 +48,11 @@ db.collection('student').where({
       // wx.setStorageSync('unitId', unitId);
       // wx.setStorageSync('unitName', unitName);
       if(res.data[0].check==0){
-         wx.redirectTo({
+         wx.navigateTo({
         url: '../mainPage/main/main'
       })
       }else{
-        wx.redirectTo({
+        wx.navigateTo({
           url: '../Teacher/tea/tea'
         })
       }

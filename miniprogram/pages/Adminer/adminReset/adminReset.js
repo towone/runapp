@@ -1,11 +1,16 @@
-// pages/Adminer/adminReset/adminReset.js
+const app = getApp()
+ 
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    //顶部安全距离（状态栏高度）
+    statusBarHeight: wx.getSystemInfoSync().statusBarHeight,
+    list: [
+      {id: 1,date:'2020-07-01',number:'201831062214',name:'贺志强',statusName:'待操作'},
+      {id: 2,date:'2020-07-01',number:'201831062214',name:'贺志强',statusName:'待操作'},
+      {id: 3,date:'2020-07-01',number:'201831062214',name:'贺志强',statusName:'待操作'},
+      {id: 4,date:'2020-07-01',number:'201831062214',name:'贺志强',statusName:'待操作'},
+      {id: 5,date:'2020-07-01',number:'201831062214',name:'贺志强',statusName:'待操作'},
+    ]
   },
 
   /**
