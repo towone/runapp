@@ -47,10 +47,12 @@ db.collection('student').where({
       // var unitId = res.data.data.User.unitId;
       // wx.setStorageSync('unitId', unitId);
       // wx.setStorageSync('unitName', unitName);
-      if(res.data[0].check==0){
-         wx.navigateTo({
-        url: '../mainPage/main/main'
-      })
+      console.log(res.data[0].check)
+      if(res.data[0].check=='0'){
+        console.log('dsffsdf')
+        wx.switchTab({
+          url: '../mainPage/main/main'
+        })
       }else{
         wx.navigateTo({
           url: '../Teacher/tea/tea'
