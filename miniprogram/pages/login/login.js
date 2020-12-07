@@ -35,11 +35,10 @@ goto_index: function () {
       env: 'hsb'
     });
     const todos = db.collection('student');
-    const _ = db.command
     console.log(that.data.password)
 db.collection('student').where({
-  Sid:that.data.username,
-   Spw:that.data.password
+  NUM:that.data.username,
+   PW:that.data.password
 })
 .get({
   success: function(res) {
@@ -48,9 +47,16 @@ db.collection('student').where({
       // var unitId = res.data.data.User.unitId;
       // wx.setStorageSync('unitId', unitId);
       // wx.setStorageSync('unitName', unitName);
-      wx.redirectTo({
+      if(res.data[0].check==0){
+         wx.redirectTo({
         url: '../mainPage/main/main'
       })
+      }else{
+        wx.redirectTo({
+          url: '../Teacher/tea/tea'
+        })
+      }
+     
     } else {
       console.log(res.data.length);
       wx.showToast({

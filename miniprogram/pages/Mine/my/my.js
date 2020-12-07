@@ -20,6 +20,33 @@ Page({
     }
     ]
       },
+      onclick:function(event){
+      var path =event.currentTarget.id
+      console.log(path)
+      switch(path) {
+        case '0':
+          console.log(path)
+           wx.navigateTo({
+             url: '../runHis/runHis',
+           });
+           break;
+        case '1':
+          wx.navigateTo({
+            url: '../announceMent/announceMent',
+          });
+           break;
+        case '2':
+          wx.navigateTo({
+            url: '../updatePwd/updatePwd',
+          });
+            break;
+        case '3':
+          wx.navigateTo({
+            url: '../connectAdm/connectAdm',
+          });
+            break;
+   } 
+      },
     onLoad: function(){
       var that = this
       wx.getUserInfo(function (userInfo){

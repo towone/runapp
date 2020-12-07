@@ -41,14 +41,14 @@
       {
         "pagePath": "pages/mainPage/main/main",
         "text": "首页",
-        "iconPath": "../miniprogram/images/main.png",
-        "selectedIconPath": "../miniprogram/images/main_active.png"
+        "iconPath": "./images/main.png",
+        "selectedIconPath": "./images/main_active.png"
       },
       {
         "pagePath": "pages/Mine/my/my",
         "text": "我的",
-        "iconPath": "../miniprogram/images/my.png",
-        "selectedIconPath": "../miniprogram/images/my_active.png"
+        "iconPath": "./images/my.png",
+        "selectedIconPath": "./images/my_active.png"
       }
     ]
   },
