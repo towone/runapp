@@ -1,2 +1,42 @@
-<!--pages/Adminer/adminUpdate/adminUpdate.wxml-->
-<text>pages/Adminer/adminUpdate/adminUpdate.wxml</text>
+
+
+<view class='page_row' bindtap="suo">  
+  <view class="search">  
+    <view class="df search_arr">  
+      <icon class="searchcion" size='20' type='search'></icon>  
+      <input class="disabled"  placeholder="请输入学号" value="{{searchValue}}" bindinput="sea"/>  
+    </view>  
+  </view>  
+  <view class='sousuo' bindtap="search">搜索</view>  
+</view> 
+<view id="total">
+<form bindsubmit="create_zhuce">
+<view id="t1">
+<text>姓名·</text><input  name="name" id="use" placeholder="" value="{{userName}}" disabled="true"></input>
+</view>
+<view id="t2">
+<text>完成公里</text><input name="password1" id="pass1"  value="{{finish}}" disabled="true"></input>
+</view>
+<view id="t3">
+<text>剩余公里</text><input  name="password2" id="pass2"  value="{{remain}}" disabled="true"></input>
+</view>
+<view id="t4">
+<text>目标公里</text><input  name="password3" id="pass3"  value="{{aid}}" disabled="true"></input>
+</view>
+<view id="t5">
+  <text>状态</text>
+  <!-- 下拉框 -->
+    <view class='select_box'>
+      <view class='select' catchtap='selectTaps'>
+        <text class='select_text'>{{selectDatas[indexs]}}</text>
+      
+      </view>
+      <view class='option_box' style='height:{{shows?(selectDatas.length>5?300:selectDatas.length*60):0}}rpx;'>
+        <text class='option' style='{{indexs==selectDatas.length-1&&"border:0;"}}' wx:for='{{selectDatas}}' wx:key='this' data-index='{{index}}' catchtap='optionTaps'>{{item}}</text>
+      </view>
+    </view>
+</view>
+<button id="btn1" form-type="submit"><text>修改</text></button>
+</form>
+
+</view>

@@ -51,9 +51,17 @@ db.collection('student').where({
       if(res.data[0].check=='0'){
         console.log('dsffsdf')
         wx.switchTab({
+<<<<<<< Updated upstream
           url: '../mainPage/main/main'
         })
       }else if(res.data[0].check=='1'){
+=======
+          url: '../mainPage/main/main',
+          
+        }),
+        wx.setStorageSync('Sno',that.data.username)
+      }else{
+>>>>>>> Stashed changes
         wx.navigateTo({
           url: '../Teacher/tea/tea'
         })
