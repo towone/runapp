@@ -48,23 +48,18 @@ db.collection('student').where({
       // wx.setStorageSync('unitId', unitId);
       // wx.setStorageSync('unitName', unitName);
       console.log(res.data[0].check)
-      if(res.data[0].check=='0'){
+      if(res.data[0].check=='0'){  
+        wx.setStorageSync('Sno',that.data.username)
         console.log('dsffsdf')
         wx.switchTab({
-<<<<<<< Updated upstream
+  
           url: '../mainPage/main/main'
         })
       }else if(res.data[0].check=='1'){
-=======
-          url: '../mainPage/main/main',
-          
-        }),
-        wx.setStorageSync('Sno',that.data.username)
-      }else{
->>>>>>> Stashed changes
         wx.navigateTo({
           url: '../Teacher/tea/tea'
         })
+
       }else{
         wx.navigateTo({
           url: '../Adminer/admin/admin',

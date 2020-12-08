@@ -1,9 +1,6 @@
 {
-<<<<<<< Updated upstream
-  "pages": [  "pages/Adminer/adminSel/adminSel",
-=======
-  "pages": [    "pages/Adminer/adminUpdate/adminUpdate",
->>>>>>> Stashed changes
+
+  "pages": [
     "pages/login/login",
     "pages/register/register",
     "pages/resetPwd/resetPwd",
@@ -21,13 +18,8 @@
     "pages/Mine/runHis/runHis",
 
     "pages/Adminer/admin/admin",
-<<<<<<< Updated upstream
-  
     "pages/Adminer/adminUpdate/adminUpdate",
-=======
     "pages/Adminer/adminSel/adminSel",
-
->>>>>>> Stashed changes
     "pages/Adminer/adminCanel/adminCanel",
     "pages/Adminer/adminReset/adminReset",
 
