@@ -53,9 +53,13 @@ db.collection('student').where({
         wx.switchTab({
           url: '../mainPage/main/main'
         })
-      }else{
+      }else if(res.data[0].check=='1'){
         wx.navigateTo({
           url: '../Teacher/tea/tea'
+        })
+      }else{
+        wx.navigateTo({
+          url: '../Adminer/admin/admin',
         })
       }
      

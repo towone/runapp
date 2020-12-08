@@ -6,21 +6,55 @@ Page({
    */
   data: {
     //顶部安全距离（状态栏高度）
+    usernum: '',
     statusBarHeight: wx.getSystemInfoSync().statusBarHeight,
-    list: [
-      {id: 1,number:'201831062214',name:'侯金凯',finish:'100km',remain:'80km'},
-      {id: 1,number:'201831062214',name:'侯金凯',finish:'100km',remain:'80km'},
-      {id: 1,number:'201831062214',name:'侯金凯',finish:'100km',remain:'80km'},
-      {id: 1,number:'201831062214',name:'侯金凯',finish:'100km',remain:'80km'},
-      
-    ]
+    list: []
   },
+value:function(e){
+  this.setData({
+    usernum: e.detail.value
+  })
+},
+search:function(){
+  var that=this;
+  const db = wx.cloud.database();
+  const testDB = wx.cloud.database({
+    env: 'hsb'
+  });
+  const todos = db.collection('runRat');
+db.collection('runRat').where({
+NUM:that.data.usernum
+}).get({
+  success: function(res){
+that.setData({
+  list:res.data
+})
+console.log(res.data)
+console.log(that.data.usernum)
+  }
 
+})
+  
+},
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that=this;
+    const db = wx.cloud.database();
+    const testDB = wx.cloud.database({
+      env: 'hsb'
+    });
+    const todos = db.collection('runRat');
+  db.collection('runRat').where({
+  }).get({
+    success: function(res){
+  that.setData({
+    list:res.data
+  })
+    }
+  
+  })
   },
 
   /**

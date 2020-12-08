@@ -2,10 +2,10 @@
   <view class="search">  
     <view class="df search_arr">  
       <icon class="searchcion" size='20' type='search'></icon>  
-      <input class="" disabled placeholder="请输入学号" value="{{searchValue}}"/>  
+      <input class=" disabled" placeholder="请输入学号" value="{{searchValue}}" bindinput="value"/>  
     </view>  
   </view>  
-  <view class='sousuo'>搜索</view>  
+  <view class='sousuo' bindtap="search">搜索</view>  
 </view> 
 <view style="margin-top:{{statusBarHeight}}px;padding-top:44px">
   <view class="top-bg"></view>
@@ -16,11 +16,15 @@
       <view class="box-column3">完成</view>
       <view class="box-column4">剩余</view>
     </view>
-    <view wx:for="{{list}}" wx:key="id" class="box-data-row">
-      <view class="box-column1">{{item.number}}</view>
+    <view wx:for="{{list}}" class="box-data-row">
+      <!-- <view class="box-column1">{{item.number}}</view>
       <view class="box-column2">{{item.name}}</view>
       <view class="box-column3">{{item.finish}}</view>
-      <view class="box-column4">{{item.remain}}</view>
+      <view class="box-column4">{{item.remain}}</view> -->
+      <view class="box-column1">{{item.NUM}}</view>
+      <view class="box-column2">{{item.name}}</view>
+      <view class="box-column3">{{item.finished}}</view>
+      <view class="box-column4">{{item.remin}}</view>
     </view>
   </view>
 </view>
