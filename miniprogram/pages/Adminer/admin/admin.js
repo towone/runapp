@@ -29,7 +29,33 @@ Page({
         })
       })
     },
-    
+    move:function(event){
+      var path =event.currentTarget.id
+      console.log(path)
+      switch(path) {
+        case '0':
+          console.log(path)
+           wx.navigateTo({
+             url: '../adminReset/adminReset',
+           });
+           break;
+        case '1':
+          wx.navigateTo({
+            url: '../adminSel/adminSel',
+          });
+           break;
+        case '2':
+          wx.navigateTo({
+            url: '../adminCanel/adminCanel',
+          });
+            break;
+        case '3':
+          wx.navigateTo({
+            url: '../adminUpdate/adminUpdate',
+          });
+            break;
+   } 
+      },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

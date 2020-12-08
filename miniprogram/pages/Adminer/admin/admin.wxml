@@ -7,12 +7,12 @@
 	</view>
 </view>
 <block wx:for="{{userListInfo}}">
-	<view class="b2">
+	<view class="b2" bindtap="move" id="{{index}}">
 		<view class="b3">
 			<image src="{{item.icon}}" class="img"></image>
 		</view>
 		<view class="b4">
-			<view>{{item.text}}</view>
+			<view >{{item.text}}</view>
 		</view>
 		<view class="listimage" style='background-image:url(/images/1.png)'></view>
 	</view>
