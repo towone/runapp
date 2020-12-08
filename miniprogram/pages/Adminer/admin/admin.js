@@ -4,16 +4,32 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: {
 
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
+  data:{
+    userListInfo:[{
+      icon:"/images/重置.png",
+      text:'重置用户密码'
+    },{
+      icon:"/images/查询.png",
+      text:'查询跑步数据'
+    },{
+      icon:"/images/注销.png",
+      text:'注销用户账号'
+    },{
+      icon:"/images/修改.png",
+      text:'修改学生信息'
+    }
+    ]
+      },
+    onLoad: function(){
+      var that = this
+      wx.getUserInfo(function (userInfo){
+        that.setData({
+          userInfo:userInfo
+        })
+      })
+    },
+    
 
   /**
    * 生命周期函数--监听页面初次渲染完成
