@@ -17,4 +17,4 @@
 		<view class="listimage" style='background-image:url(/images/1.png)'></view>
 	</view>
 </block>
-<button id="btn1" form-type="submit"><text>退出登录</text></button>
+<button id="btn1" form-type="submit" bindtap="exit"><text>退出登录</text></button>
