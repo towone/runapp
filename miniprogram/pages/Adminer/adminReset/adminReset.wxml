@@ -1,22 +1,22 @@
-<view style="margin-top:{{statusBarHeight}}px;padding-top:44px">
+<view style="margin-top:{{statusBarHeight}}rpx;padding-top:0rpx">
+<view style="font-size:20rpx">以下是申请重置密码用户列表</view>
   <view class="top-bg"></view>
   <view class="box-list">
     <view class="box-title-row">
-      <view class="box-column1">日期</view>
+      <!-- <view class="box-column1">日期<iew> -->
       <view class="box-column2">学号</view>
       <view class="box-column3">姓名</view>
-      <view class="box-column4">状态</view>
-      <view class="box-column-end">操作</view>
+      <!-- <view class="box-column4">状态<iew> -->
+      <!-- <view class="box-column-end">操作<iew> -->
     </view>
     <view wx:for="{{list}}" wx:key="id" class="box-data-row">
-      <view class="box-column1">{{item.date}}</view>
-      <view class="box-column2">{{item.number}}</view>
-      <view class="box-column3">{{item.name}}</view>
+      <!-- <view class="box-column1">{{item.date}}<iew> -->
+      <view class="box-column2">{{item.Acc}}</view>
+      <view class="box-column3">{{item.Sname}}</view>
       <view class="box-column4">
-        <view class="statusF58B85">{{item.statusName}}</view>
+        <!-- <view class="statusF58B85">{{item.statusName}}<iew> -->
       </view>
-      <view class="box-column-end c85bb58">删除</view>
     </view>
   </view>
 </view>
-<button id="btn1" form-type="submit"><text>确认重置密码</text></button>
+<button id="btn1" bindtap="Reset">确认重置密码</button>

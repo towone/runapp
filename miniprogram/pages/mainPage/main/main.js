@@ -14,6 +14,11 @@ Page({
   onLoad: function (options) {
 
   },
+  move:function(){
+    wx.navigateTo({
+      url: '../joinClass/joinClass',
+    })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

@@ -27,7 +27,8 @@
 }  
 .page_row{  
   display: flex;  
-  flex-direction: row  
+  flex-direction: row;
+  margin-top:50rpx;
 }  
 .searchcion {  
   margin: 10rpx 10rpx 10rpx 10rpx;  

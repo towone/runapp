@@ -6,7 +6,8 @@ Page({
    */
   data: {
     acc:'',
-    pwd:''
+    pwd:'',
+    name:''
   },
 
   /**
@@ -28,6 +29,11 @@ accinput:function(e){
 })
 
 },
+nameinput:function(e){
+this.setData({
+name:e.detail.value
+})
+},
 pwdinput:function(e){
 this.setData({
   pwd:e.detail.value
@@ -39,29 +45,40 @@ applyReset:function(){
 
 db.collection('resetPwd').where({
   Acc:this.data.acc,
-  Pwd:this.data.pwd
+  Pwd:this.data.pwd,
+  Sname:this.data.name
 }).get({
   success:(res)=>{
     if(res.data.length!=0){
-      console.log('你已经重置过密码！')
+      wx.showToast({
+        title: '请勿重复重置',
+        image:'../../images/错误.png'
+      })
     }
     else{
       db.collection('student').where({
         NUM:this.data.acc,
+        Sname:this.data.name,
         sixID:this.data.pwd
       }).get({
         success:(res)=>{
           if(res.data.length==0){
-            console.log('学号或身份证后六位输入错误！')
+            wx.showToast({
+              title: '信息不正确',
+              image:'../../images/错误.png'
+            })
           }
           else{
             db.collection('resetPwd').add({
               data:{
                 Acc:this.data.acc,
-                Pwd:this.data.pwd
+                Pwd:this.data.pwd,
+                Sname:this.data.name
               },
               success:function(res){
-                console.log('申请成功！')
+                wx.showToast({
+                  title: '申请成功',
+                })
               }
             })
           }

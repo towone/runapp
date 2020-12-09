@@ -1,12 +1,16 @@
 <view id="total">
-<form>
-<view id="t1">
-<text>账号</text><input type="text" name="username" id="use" placeholder="请输入学号" value="{{username}}" bindinput="accinput"></input>
-</view>
-<view id="t2">
-<text>身份证</text><input type="password" name="identity" id="pass1" placeholder="身份证后六位" value="{{password1}}" bindinput="pwdinput"></input>
-</view>
-<button id="btn1" bindtap="applyReset"><text>申请重置密码</text></button>
-</form>
+	<form>
+		<view id="t1">
+			<text>账号</text><input type="text" name="username" id="use" placeholder="请输入学号" value="{{username}}" bindinput="accinput"></input>
+		</view>
+		<view id="t2">
+			<text>姓名</text><input type="text" name="name" id="pass1" placeholder="您的姓名" value="{{password1}}" bindinput="nameinput"></input>
+		</view>
+		<view id="t2">
+			<text>身份证</text><input type="password" name="identity" id="pass1" placeholder="身份证后六位" value="{{password1}}" bindinput="pwdinput"></input>
+		</view>
+
+		<button id="btn1" bindtap="applyReset"><text>申请重置密码</text></button>
+	</form>
 
 </view>

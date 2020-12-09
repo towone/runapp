@@ -34,11 +34,11 @@ page{
   text-align: center;
 }
 .box-list .box-column3{
-  flex: 0 0 120rpx;
+  flex: 0 0 400rpx;
   text-align: center;
 }
 .box-list .box-column4{
-  flex: 0 0 150rpx;
+  /* flex: 0 0 150rpx; */
   text-align: center;
 }
 .box-list .box-column-end{
