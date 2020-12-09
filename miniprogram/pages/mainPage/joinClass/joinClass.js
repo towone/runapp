@@ -5,9 +5,45 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    num: ''
   },
+  classnum: function (e) {
+    this.setData({
+      num: e.detail.value
+    })
+  },
+  joinclass: function () {
+    const db = wx.cloud.database();
+    const testDB = wx.cloud.database({
+      env: 'hsb'
+    });
+    db.collection('CreateClass').where({
+      ClassNum: this.data.num
+    }).get({
 
+      success: (res) => {
+        if (res.data.length > 0) {
+          db.collection('class').add({
+            data: {
+              ClassNum: this.data.num,
+              Sno: wx.getStorageSync('Sno')
+            }
+          }).then(res => {
+            wx.showToast({
+              title: '加入成功',
+             
+            })
+          })
+        }else{
+          wx.showToast({
+            title: '不存在此班级',
+          })
+        }
+      }
+    })
+
+    // wx.getStorageSync('Sno')
+  },
   /**
    * 生命周期函数--监听页面加载
    */

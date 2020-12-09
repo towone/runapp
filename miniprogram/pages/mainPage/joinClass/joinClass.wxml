@@ -1,4 +1,4 @@
 <view id="t1">
-<text>班级号</text><input type="text" name="id" id="use" placeholder="输入班级号" value="{{username}}"></input>
+<text>班级号</text><input type="text" name="id" id="use" placeholder="输入班级号" value="{{username}}" bindinput="classnum"></input>
 </view>
-<button id="btn1" form-type="submit" ><text>加入班级</text></button>
+<button id="btn1" form-type="submit" bindtap="joinclass"><text>加入班级</text></button>
