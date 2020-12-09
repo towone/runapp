@@ -7,25 +7,71 @@ Page({
   data: {
     //顶部安全距离（状态栏高度）
     statusBarHeight: wx.getSystemInfoSync().statusBarHeight,
-    list: [
-      {id: 1,class:'一班', number:'2018314',name:'侯金凯',finish:'60km',remain:'30km'},
-      {id: 1,class:'一班', number:'2018314',name:'侯金凯',finish:'60km',remain:'30km'},
-      {id: 1,class:'一班', number:'2018314',name:'侯金凯',finish:'60km',remain:'30km'},
-      
-    ]
-  },
-  // 点击下拉列表
-  optionTaps(e) {
-    let Indexs = e.currentTarget.dataset.index; //获取点击的下拉列表的下标
-    console.log(Indexs)
-    this.setData({
-      indexs: Indexs,
-      shows: !this.data.shows
-    });
+     list: [
+      //  {
+    //     id: 1,
+    //     class: '一班',
+    //     number: '2018314',
+    //     name: '侯金凯',
+    //     finish: '60km',
+    //     remain: '30km'
+    //   },
+    //   {
+    //     id: 1,
+    //     class: '一班',
+    //     number: '2018314',
+    //     name: '侯金凯',
+    //     finish: '60km',
+    //     remain: '30km'
+    //   },
+    //   {
+    //     id: 1,
+    //     class: '一班',
+    //     number: '2018314',
+    //     name: '侯金凯',
+    //     finish: '60km',
+    //     remain: '30km'
+    //   },
 
+    ],
+    numlist: '',
+    Numlist: []
   },
+
   onLoad: function (options) {
-
+    var that = this;
+    const db = wx.cloud.database();
+    const testDB = wx.cloud.database({
+      env: 'hsb'
+    });
+    db.collection('CreateClass').where({
+      Info: '轮滑一班'
+    }).get().then(res=>{
+        db.collection('class').where({
+          ClassNum: res.data[0].ClassNum
+        }).get().then(e=>{
+          for(var i=0;i<e.data.length;i++){
+            db.collection('runRat').where({
+              NUM:e.data[i].Sno
+            }).get().then(c=>{
+              that.setData({
+                list:c.data
+              })
+            })
+          }
+          
+        })
+    })
+    // db.collection('class').where({
+    //   ClassNum: that.data.numlist
+    // }).get({
+    //   success: (res) => {
+    //     console.log(res)
+    //     that.setData({
+    //       Numlist: res.data
+    //     })
+    //   }
+    // })
   },
 
   /**
