@@ -26,8 +26,8 @@
     "pages/Teacher/tea/tea",
     "pages/Teacher/publishNotice/publishNotice",
     "pages/Teacher/classRate/classRate",
-    "pages/Teacher/createClass",
-    "pages/Teacher/updatePwd"
+    "pages/Teacher/createClass/createClass",
+    "pages/Teacher/updatePwd/updatePwd"
    
   ],
   "window":{

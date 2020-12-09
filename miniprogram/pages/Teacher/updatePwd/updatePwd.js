@@ -1,29 +1,16 @@
-// pages/Teacher/classRate/classRate.js
+// pages/Teacher/updatePwd/updatePwd.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    //顶部安全距离（状态栏高度）
-    statusBarHeight: wx.getSystemInfoSync().statusBarHeight,
-    list: [
-      {id: 1,class:'一班', number:'2018314',name:'侯金凯',finish:'60km',remain:'30km'},
-      {id: 1,class:'一班', number:'2018314',name:'侯金凯',finish:'60km',remain:'30km'},
-      {id: 1,class:'一班', number:'2018314',name:'侯金凯',finish:'60km',remain:'30km'},
-      
-    ]
-  },
-  // 点击下拉列表
-  optionTaps(e) {
-    let Indexs = e.currentTarget.dataset.index; //获取点击的下拉列表的下标
-    console.log(Indexs)
-    this.setData({
-      indexs: Indexs,
-      shows: !this.data.shows
-    });
 
   },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
   onLoad: function (options) {
 
   },
