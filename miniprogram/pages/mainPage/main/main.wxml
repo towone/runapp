@@ -1,19 +1,20 @@
 <view id="total">
-<!-- <image src="/images/111.png"></image> -->
-<form bindsubmit="create_login">
+	<image src="/images/logo.png" id='logo'></image>
+  <text id="kuibu">跬步</text>
+	<form bindsubmit="create_login">
 
-<block>
-<view id="t1">
-<text>通知：</text><input type="text" name="username" id="use" placeholder="" value="{{username}}"></input>
-</view>
-<button id="btn3" form-type="submit"><text>确认</text></button>
-<button id="btn4" form-type="submit"><text>隐藏</text></button>
-</block>
+		<block>
+			<view id="t1">
+				<text>通知：</text><input type="text" name="username" id="use" placeholder="" value="{{username}}"></input>
+			</view>
+			<button id="btn3" form-type="submit"><text>确认</text></button>
+			<button id="btn4" form-type="submit"><text>隐藏</text></button>
+		</block>
 
 
 
-<button id="btn1" form-type="submit"><text>积千里(跑步打卡)</text></button>
+		<button id="btn1" form-type="submit"><text>积千里(跑步打卡)</text></button>
 
-<button id="btn2" form-type="submit" bindtap="move"><text>加入班级</text></button>
-</form>
+		<button id="btn2" form-type="submit" bindtap="move"><text>加入班级</text></button>
+	</form>
 </view>

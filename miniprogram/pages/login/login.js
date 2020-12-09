@@ -35,7 +35,6 @@ goto_index: function () {
       env: 'hsb'
     });
     const todos = db.collection('student');
-    console.log(that.data.password)
 db.collection('student').where({
   NUM:that.data.username,
    PW:that.data.password
@@ -47,12 +46,9 @@ db.collection('student').where({
       // var unitId = res.data.data.User.unitId;
       // wx.setStorageSync('unitId', unitId);
       // wx.setStorageSync('unitName', unitName);
-      console.log(res.data[0].check)
       if(res.data[0].check=='0'){  
         wx.setStorageSync('Sno',that.data.username)
-        console.log('dsffsdf')
         wx.switchTab({
-  
           url: '../mainPage/main/main'
         })
       }else if(res.data[0].check=='1'){
