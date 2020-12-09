@@ -45,7 +45,7 @@ Page({
       env: 'hsb'
     });
     db.collection('CreateClass').where({
-      Info: '轮滑一班'
+      Info: wx.getStorageSync('class')
     }).get().then(res=>{
         db.collection('class').where({
           ClassNum: res.data[0].ClassNum

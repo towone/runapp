@@ -1,2 +1,7 @@
-<!--pages/Teacher/publishNotice/publishNotice.wxml-->
-<text>pages/Teacher/publishNotice/publishNotice.wxml</text>
+
+<view id="t1">
+<text>公告</text><input type="text" name="gonggao" id="use" placeholder="" value="{{username}}"></input>
+</view>
+
+<button id="btn1" form-type="submit"><text>发布公告</text></button>
+

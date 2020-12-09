@@ -7,7 +7,7 @@
 	</view>
 </view>
 <block wx:for="{{userListInfo}}" wx:key="index">
-	<view class="b2" bindtap="onclick" id ="{{index}}">
+	<view class="b2" bindtap="onclick" id="{{index}}">
 		<view class="b3">
 			<image src="{{item.icon}}"></image>
 		</view>
@@ -17,4 +17,4 @@
 		<view class="listimage" style='background-image:url(/images/1.png)'></view>
 	</view>
 </block>
-<button id="btn1" form-type="submit"><text>退出登录</text></button>
+<button id="btn1" form-type="submit" bindtap="exit"><text>退出登录</text></button>

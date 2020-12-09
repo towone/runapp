@@ -1,1 +1,112 @@
-/* pages/mainPage/accMile/accMile.wxss */
+#i0{
+  width:100rpx;
+  height:100rpx;
+  position: relative;
+left: 224rpx;
+  top:663rpx;
+  background-color: white;
+}
+#t1{
+  width:200rpx;
+  height:100rpx;
+  left: 325rpx;
+  background-color: white;
+  position: relative;
+  top:563rpx;
+}
+#i1{
+  width:100rpx;
+  height:100rpx;
+  position: relative;
+
+  top:700rpx;
+}
+#t2{
+  width:200rpx;
+  height:100rpx;
+  left: 98rpx;
+  background-color: white;
+  top:601rpx;
+  position: relative;
+}
+#i2{
+  width:100rpx;
+  height:100rpx;
+  position: relative;
+left: 452rpx;
+  top:502rpx;
+}
+#t3{
+  width:400rpx;
+  height:100rpx;
+  left: 550rpx;
+  background-color: white;
+  position: relative;
+  top:403rpx;
+}
+
+#t1 text{
+position: relative;
+left:10rpx;
+top:30rpx;
+color: rgb(143, 143, 143);
+}
+#use{
+  width:400rpx;
+  height:80rpx;
+  margin-left: 200rpx;
+  position: relative;
+  bottom: 25rpx;
+}
+#t2 text{
+position: relative;
+left:20rpx;
+top:30rpx;
+color: rgb(143, 143, 143);
+}
+#pass1{
+  width:400rpx;
+  height:80rpx;
+  margin-left: 200rpx;
+  position: relative;
+  bottom: 25rpx;
+}
+
+#t3 text{
+position: relative;
+left:20rpx;
+top:30rpx;
+color: rgb(143, 143, 143);
+}
+#pass2{
+  width:400rpx;
+  height:80rpx;
+  margin-left: 200rpx;
+  position: relative;
+  bottom: 25rpx;
+}
+
+#btn1{
+  position: relative;
+  top:512rpx;
+  left: -219rpx;
+  background-color:rgb(51, 204, 170);
+  width:250rpx;
+  border-radius: 50rpx;
+}
+#btn1 text{
+  color:white;
+  font-size: 39rpx;
+}
+#btn2{
+  position: relative;
+  top:431rpx;
+  background-color:red;
+  width:250rpx;
+  left: 213rpx;
+  border-radius: 50rpx;
+}
+#btn2 text{
+  color:white;
+  font-size: 39rpx;
+}

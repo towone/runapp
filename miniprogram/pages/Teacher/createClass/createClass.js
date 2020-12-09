@@ -4,9 +4,27 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: {
-
-  },
+  data:{
+    shows: false, //控制下拉列表的显示隐藏，false隐藏、true显示
+    selectDatas: ['一班', '二班'], //下拉列表的数据
+    indexs: 0, //选择的下拉列 表下标,
+ 
+      },
+      selectTaps() {
+        this.setData({
+          shows: !this.data.shows,
+        });
+      },
+      // 点击下拉列表
+      optionTaps(e) {
+        let Indexs = e.currentTarget.dataset.index; //获取点击的下拉列表的下标
+        console.log(Indexs)
+        this.setData({
+          indexs: Indexs,
+          shows: !this.data.shows
+        });
+    
+      },
 
   /**
    * 生命周期函数--监听页面加载

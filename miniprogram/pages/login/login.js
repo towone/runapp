@@ -52,6 +52,7 @@ db.collection('student').where({
           url: '../mainPage/main/main'
         })
       }else if(res.data[0].check=='1'){
+        wx.setStorageSync('Sno',that.data.username)
         wx.navigateTo({
           url: '../Teacher/tea/tea'
         })

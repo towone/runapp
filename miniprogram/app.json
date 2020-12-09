@@ -1,6 +1,6 @@
 {
+  "pages": [       
 
-  "pages": [   "pages/Teacher/classRate/classRate",
     "pages/login/login",
     "pages/register/register",
     "pages/resetPwd/resetPwd",
@@ -25,9 +25,12 @@
 
     "pages/Teacher/tea/tea",
     "pages/Teacher/publishNotice/publishNotice",
-    
     "pages/Teacher/createClass/createClass",
-    "pages/Teacher/updatePwd/updatePwd"
+    "pages/Teacher/updatePwd/updatePwd",
+    "pages/Teacher/classRate/classRate"
+
+
+
    
   ],
   "window":{

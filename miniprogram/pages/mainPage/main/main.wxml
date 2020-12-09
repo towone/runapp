@@ -13,7 +13,7 @@
 
 
 
-		<button id="btn1" form-type="submit"><text>积千里(跑步打卡)</text></button>
+		<button id="btn1" form-type="submit" bindtap="startrun"><text>积千里(跑步打卡)</text></button>
 
 		<button id="btn2" form-type="submit" bindtap="move"><text>加入班级</text></button>
 	</form>

@@ -4,17 +4,94 @@ Page({
   /**
    * 页面的初始数据
    */
+  // 点击下拉显示框
+  selectTaps() {
+    this.setData({
+      shows: !this.data.shows,
+    });
+  },
+  // 点击下拉列表
+  optionTaps(e) {
+    let Indexs = e.currentTarget.dataset.index; //获取点击的下拉列表的下标
+    this.setData({
+      indexs: Indexs,
+      shows: !this.data.shows
+    });
+    wx.setStorageSync('class', this.data.selectDatas[Indexs])
+
+  },
   data: {
-
+    shows: false, //控制下拉列表的显示隐藏，false隐藏、true显示
+    selectDatas: ['yiersan'], //下拉列表的数据
+    indexs: 0, //选择的下拉列 表下标,
+    userListInfo: [{
+      icon: "/images/通知公告.png",
+      text: '发布通知'
+    }, {
+      icon: "/images/完成情况.png",
+      text: '查看完成情况'
+    }, {
+      icon: "/images/创建班级.png",
+      text: '创建班级'
+    }, {
+      icon: "/images/修改密码.png",
+      text: '修改密码'
+    }]
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  //页面跳转函数
+  onclick: function (event) {
+    var path = event.currentTarget.id
+    switch (path) {
+      case '0':
+        wx.navigateTo({
+          url: '../publishNotice/publishNotice',
+        });
+        break;
+      case '1':
+        wx.navigateTo({
+          url: '../classRate/classRate',
+        });
+        break;
+      case '2':
+        wx.navigateTo({
+          url: '../createClass/createClass',
+        });
+        break;
+      case '3':
+        wx.navigateTo({
+          url: '../updatePwd/updatePwd',
+        });
+        break;
+    }
   },
+  onLoad: function () {
+    // var that = this
+    // wx.getUserInfo(function (userInfo) {
+    //   that.setData({
+    //     userInfo: userInfo
+    //   })
+    // }),
+    console.log('dsfsd')
+     const db = wx.cloud.database();
+     db.collection('CreateClass').where({}).get({
+       success:(res)=>{
+        for(var i=0;i<res.data.length;i++){
+          this.setData({
+            ['selectDatas['+i+']']:res.data[i].Info
+          })
+        }
+       },
+       fail:(err)=>{
 
+       }
+     })
+    
+  },
+  exit: function () {
+    wx.redirectTo({
+      url: '../../login/login',
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

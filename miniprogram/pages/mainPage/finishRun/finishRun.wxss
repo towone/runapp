@@ -1,1 +1,95 @@
-/* pages/mainPage/finishRun/finishRun.wxss */
+#i0{
+  width:100rpx;
+  height:100rpx;
+  position: relative;
+left: 224rpx;
+  top:463rpx;
+  background-color: white;
+}
+#t1{
+  width:200rpx;
+  height:100rpx;
+  left: 325rpx;
+  background-color: white;
+  position: relative;
+  top:363rpx;
+}
+#i1{
+  width:100rpx;
+  height:100rpx;
+  position: relative;
+
+  top:500rpx;
+}
+#t2{
+  width:200rpx;
+  height:100rpx;
+  left: 98rpx;
+  background-color: white;
+  top:401rpx;
+  position: relative;
+}
+#i2{
+  width:100rpx;
+  height:100rpx;
+  position: relative;
+left: 452rpx;
+  top:302rpx;
+}
+#t3{
+  width:400rpx;
+  height:100rpx;
+  left: 550rpx;
+  background-color: white;
+  position: relative;
+  top:203rpx;
+}
+
+#t1 text{
+position: relative;
+left:10rpx;
+top:30rpx;
+color: rgb(143, 143, 143);
+}
+#use{
+  width:400rpx;
+  height:80rpx;
+  margin-left: 200rpx;
+  position: relative;
+  bottom: 25rpx;
+}
+#t2 text{
+position: relative;
+left:20rpx;
+top:30rpx;
+color: rgb(143, 143, 143);
+}
+#pass1{
+  width:400rpx;
+  height:80rpx;
+  margin-left: 200rpx;
+  position: relative;
+  bottom: 25rpx;
+}
+
+#t3 text{
+position: relative;
+left:20rpx;
+top:30rpx;
+color: rgb(143, 143, 143);
+}
+#pass2{
+  width:400rpx;
+  height:80rpx;
+  margin-left: 200rpx;
+  position: relative;
+  bottom: 25rpx;
+}
+#t4{
+  width:400rpx;
+  height:150rpx;
+  left: 182rpx;
+  background-color: white;
+  position: relative;
+  top:263rpx;
+}
