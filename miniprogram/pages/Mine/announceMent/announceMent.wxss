@@ -1,1 +1,14 @@
 /* pages/Mine/announceMent/announceMent.wxss */
+.td {
+  width:100%;
+}
+.bg-g{
+  background: #E6F3F9;
+}
+.tr {
+  border: 1rpx solid black;
+margin-bottom: auto;
+  width: 100%;
+  height: 6rem;
+  align-items: center;
+}

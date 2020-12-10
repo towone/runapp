@@ -5,14 +5,33 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+list:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this
+    const db = wx.cloud.database();
+    const testDB = wx.cloud.database({
+      env: 'hsb'
+    });
+    db.collection('class').where({
+      Sno:wx.getStorageSync('Sno')
+    }).get().then(res=>{
+      db.collection('CreateClass').where({
+        ClassNum:res.data[0].ClassNum
+      }).get().then(e=>{
+        db.collection('notice').where({
+          class:e.data[0].Info
+        }).get().then(c=>{
+          that.setData({
+            list:c.data
+          })
+        })
+      })
+    })
   },
 
   /**
