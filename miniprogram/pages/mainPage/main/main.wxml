@@ -1,14 +1,14 @@
 <view id="total">
 	<image src="/images/logo.png" id='logo'></image>
-  <text id="kuibu">跬步</text>
-	<form bindsubmit="create_login">
+  <text id="kuibu">首页</text>
 
+	<form bindsubmit="create_login">
 		<block>
 			<view id="t1">
-				<text>通知：</text><input type="text" name="username" id="use" placeholder="" value="{{username}}"></input>
+				<text>最新通知：</text>
+				<text>{{time}}</text>
+				<textarea id="notice" disabled="true">{{notice}}</textarea>
 			</view>
-			<button id="btn3" form-type="submit"><text>确认</text></button>
-			<button id="btn4" form-type="submit"><text>隐藏</text></button>
 		</block>
 
 

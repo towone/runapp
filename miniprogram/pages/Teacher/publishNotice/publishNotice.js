@@ -6,7 +6,8 @@ Page({
    */
   data: {
     class: wx.getStorageSync('class'),
-    notice: ''
+    notice: '',
+    time:''
   },
   notice: function (e) {
     this.setData({
@@ -14,7 +15,7 @@ Page({
     })
   },
   publish: function () {
-
+    var myDate = new Date();
     wx.showModal({
       title: '提示',
       content: '是否发布该公告？',
@@ -30,7 +31,8 @@ Page({
             db.collection('notice').add({
               data: {
                 Content: this.data.notice,
-                class: wx.getStorageSync('class')
+                class: wx.getStorageSync('class'),
+                time:myDate.toLocaleString(),
               },
               success: (res) => {
                 wx.showToast({
@@ -40,7 +42,8 @@ Page({
               fail: (err) => {
                 wx.showToast({
                   title: '发布失败',
-                  image: '../../../images/错误.png'
+                  image: '../../../images/错误.png',
+                 
                 })
               }
             })
@@ -70,7 +73,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      class: wx.getStorageSync('class')
+    })
   },
 
   /**
