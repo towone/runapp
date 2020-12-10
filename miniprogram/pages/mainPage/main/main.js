@@ -58,7 +58,7 @@ Page({
   },
   startrun: function () {
     wx.navigateTo({
-      url: '../accMile/accMile',
+      url: '../faceIden/faceIden',
     })
   },
   /**
