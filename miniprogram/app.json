@@ -1,5 +1,5 @@
 {
-  "pages": [         "pages/Teacher/updatePwd/updatePwd",  
+  "pages": [       
 
     "pages/login/login",
     "pages/register/register",
@@ -26,7 +26,7 @@
     "pages/Teacher/tea/tea",
     "pages/Teacher/publishNotice/publishNotice",
     "pages/Teacher/createClass/createClass",
-
+    "pages/Teacher/updatePwd/updatePwd",
     "pages/Teacher/classRate/classRate"
 
 

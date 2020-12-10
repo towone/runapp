@@ -1,7 +1,7 @@
-
+<view id="title">给<text>{{class}}</text>发公告</view>
 <view id="t1">
-<text>公告</text><input type="text" name="gonggao" id="use" placeholder="" value="{{username}}"></input>
+	<text>公告内容:</text>
+	<textarea id="use" placeholder="请输入公告内容"  maxlength='-1' bindinput="notice"></textarea>
 </view>
 
-<button id="btn1" form-type="submit"><text>发布公告</text></button>
-
+<button id="btn1" form-type="submit" bindtap="publish"><text>发布公告</text></button>

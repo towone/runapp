@@ -1,15 +1,17 @@
-
 <image id="i0" src="/images/距离.png"></image>
 <view id="t1">
-<text>距离:</text><input type="text" name="distance" id="use" placeholder="" value="{{username}}"></input>
+	<text>距离:</text>
+  <input type="text" name="distance" id="use" placeholder="" value="{{username}}"></input>
 </view>
-<image id="i1" src="/images/配速.png"></image>
+<image id="i1" src="/images/速度.png"></image>
 <view id="t2">
-<text>配速:</text><input type="password" name="speed" id="pass1"  value="{{password1}}"></input>
+	<text>配速:</text>
+  <input type="password" name="speed" id="pass1" value="{{password1}}"></input>
 </view>
 <image id="i2" src="/images/时间.png"></image>
 <view id="t3">
-<text>时间:</text><input type="time" name="password2" id="pass2"  value="{{password2}}"></input>
+	<text>时间:</text>
+  <input type="time" name="password2" id="pass2" value="{{password2}}"></input>
 </view>
 
 
