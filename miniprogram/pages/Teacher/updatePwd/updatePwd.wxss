@@ -37,6 +37,7 @@
   color: rgb(102, 102, 102);
   line-height: 90rpx;
   height: 86rpx;
+  padding-left: 15rpx;
 
 }
 
@@ -98,16 +99,16 @@ color: black;
 #use{
   width:400rpx;
   height:80rpx;
-  margin-left: 200rpx;
+  margin-left: 220rpx;
   position: relative;
-  bottom: 25rpx;
+  bottom: 20rpx;
 }
 #use1{
   width:400rpx;
   height:80rpx;
-  margin-left: 200rpx;
+  margin-left: 220rpx;
   position: relative;
-  bottom: 25rpx;
+  bottom: 20rpx;
 }
 
 

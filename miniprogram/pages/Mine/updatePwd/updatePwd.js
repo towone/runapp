@@ -49,11 +49,11 @@ if(this.data.newPwd!=''&&this.data.oldpwd!=''&&this.data.connewpwd!=''){
                   // 密码修改成功跳转到我的界面
                   wx.showToast({
                     title: '密码修改成功！',
-                    success:(res)=>{
-                      wx.switchTab({
-                        url: '../my/my',
-                      })
-                    }
+                    // success:(res)=>{
+                    //   wx.switchTab({
+                    //     url: '../my/my',
+                    //   })
+                    // }
                 })
 
               },
