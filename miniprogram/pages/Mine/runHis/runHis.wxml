@@ -4,16 +4,11 @@
     <view class="th">公里数</view>
     <view class="th ">所用时间</view>
   </view>
-  <block wx:for="{{listData}}" wx:key="{{code}}">
-    <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
-      <view class="td">{{item.code}}</view>
-      <view class="td">{{item.text}}</view>
-      <view class="td">{{item.type}}</view>
-    </view>
-    <view class="tr" wx:else>
-      <view class="td">{{item.code}}</view>
-      <view class="td">{{item.text}}</view>
-      <view class="td">{{item.type}}</view>
+  <block wx:for="{{listData}}">
+    <view class="tr bg-g">
+      <view class="td">{{item.date}}</view>
+      <view class="td">{{item.kilometre}}</view>
+      <view class="td">{{item.time}}</view>
     </view>
   </block>
 </view>
