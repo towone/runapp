@@ -1,20 +1,10 @@
-<view id="b1">
-  <text>班级信息</text>
-  <!-- 下拉框 -->
-    <view class='select_box'>
-      <view class='select' catchtap='selectTaps'>
-        <text class='select_text'>{{selectDatas[indexs]}}</text>
-      
-      </view>
-      <view class='option_box' style='height:{{shows?(selectDatas.length>5?300:selectDatas.length*60):0}}rpx;'>
-        <text class='option' style='{{indexs==selectDatas.length-1&&"border:0;"}}' wx:for='{{selectDatas}}' wx:key='this' data-index='{{index}}' catchtap='optionTaps'>{{item}}</text>
-      </view>
-    </view>
+<view id="t3">
+	<text>班级信息</text><input type="text" id="use" placeholder="输入班级名" bindinput="input1"></input>
 </view>
 <view id="t1">
-<text>班级号</text><input type="text" name="old" id="use" placeholder="" value="{{old}}"></input>
+	<text>班级号</text><input type="text" id="use" placeholder="输入班级号" bindinput="input2"></input>
 </view>
 <view id="t2">
-<text>负责老师</text><input type="text" name="new" id="use1" placeholder="" value="{{new}}"></input>
+	<text>负责老师</text><input type="text" id="use" placeholder="输入教师姓名" bindinput="input3"></input>
 </view>
-<button id="btn1" form-type="submit"><text>创建</text></button>
+<button id="btn1" form-type="submit" bindtap="create"><text>创建</text></button>
