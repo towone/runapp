@@ -5,27 +5,43 @@ Page({
    * 页面的初始数据
    */
   data:{
-    shows: false, //控制下拉列表的显示隐藏，false隐藏、true显示
-    selectDatas: ['一班', '二班'], //下拉列表的数据
-    indexs: 0, //选择的下拉列 表下标,
- 
+name:'',
+num:'',
+Tname:''
       },
-      selectTaps() {
-        this.setData({
-          shows: !this.data.shows,
-        });
-      },
-      // 点击下拉列表
-      optionTaps(e) {
-        let Indexs = e.currentTarget.dataset.index; //获取点击的下拉列表的下标
-        console.log(Indexs)
-        this.setData({
-          indexs: Indexs,
-          shows: !this.data.shows
-        });
-    
-      },
-
+input1:function(e){
+  this.setData({
+    name:e.detail.value
+  })
+},
+input2:function(e){
+  this.setData({
+    num:e.detail.value
+  })
+},
+input3:function(e){
+  this.setData({
+    Tname:e.detail.value
+  })
+},
+create:function(){
+  const db = wx.cloud.database();
+  const testDB = wx.cloud.database({
+    env: 'hsb'
+  });
+  db.collection('CreateClass').add({
+    data:{
+      Tno:wx.getStorageSync('Sno'),
+      Tname:this.data.Tname,
+      Info:this.data.name,
+      ClassNum:this.data.num
+    }
+  }).then(res=>{
+    wx.showToast({
+      title: '创建成功',
+    })
+  })
+},
   /**
    * 生命周期函数--监听页面加载
    */
