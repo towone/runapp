@@ -1,2 +1,3 @@
 <!--pages/mainPage/faceIden/faceIden.wxml-->
-<text>pages/mainPage/faceIden/faceIden.wxml</text>
+<camera device-position="front" flash="off" binderror="error" style="width: 100%; height: 400px;"></camera>
+<button type="primary" bindtap="takePhoto" style="margin-top:20rpx"> 拍照 </button>
