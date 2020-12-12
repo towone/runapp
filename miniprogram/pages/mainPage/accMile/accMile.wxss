@@ -1,5 +1,5 @@
 #map{
-  
+  width: 740rpx;
   border: 2rpx solid black;
 }
 #i0 {
@@ -18,7 +18,7 @@
   left: 20rpx;
 }
 #t1 {
-  width: 200rpx;
+  width: 500rpx;
   height: 50rpx;
   left: 325rpx;
   bottom: 40rpx;
@@ -36,7 +36,7 @@
 }
 
 #t2 {
-  width: 200rpx;
+  width: 300rpx;
   height: 50rpx;
   left: 98rpx;
 

@@ -5,6 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+    shows: false,
+    indexs:0,
+    selectDatas: ['正常','异常'],
     seaSno:'201831062217',
     userName:'',
     finish:'',
@@ -12,10 +15,24 @@ Page({
     aid:'',
   },
   //获取要搜索的学号
+  selectTaps() {
+    this.setData({
+      shows: !this.data.shows,
+    });
+  },
 sea:function(e){
   this.setData({
     seaSno:e.detail.value
   })
+},
+optionTaps(e) {
+  let Indexs = e.currentTarget.dataset.index; //获取点击的下拉列表的下标
+  this.setData({
+    indexs: Indexs,
+    shows: !this.data.shows
+  });
+
+
 },
 //搜索 在下面显示出相应的信息
 search:function(){
@@ -24,7 +41,6 @@ db.collection('runRat').where({
   NUM:this.data.seaSno
 }).get({
   success:(res)=>{
-    console.log(res)
     this.setData({
       userName:res.data[0].name,
       finish:res.data[0].finished,
@@ -33,6 +49,26 @@ db.collection('runRat').where({
     })
   }
 })
+},
+update:function(){
+  const db=wx.cloud.database()
+  db.collection('runRat').where({
+    NUM:this.data.seaSno
+  }).get({
+    success:(res)=>{
+      console.log(res)
+      db.collection('runRat').doc(res.data[0]._id).update({
+        data:{
+          status:this.data.selectDatas[this.data.indexs]
+        },
+        success:(res)=>{
+          wx.showToast({
+            title: '修改状态成功',
+          })
+        }
+      })
+    }
+  })
 },
   /**
    * 生命周期函数--监听页面加载

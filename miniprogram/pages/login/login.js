@@ -91,11 +91,11 @@ Page({
   onReady: function () {
 
   },
-  register: function () {
-    wx.navigateTo({
-      url: '../register/register'
-    })
-  },
+  // register: function () {
+  //   wx.navigateTo({
+  //     url: '../register/register'
+  //   })
+  // },
   forgetPwd: function () {
     wx.navigateTo({
       url: '../resetPwd/resetPwd'

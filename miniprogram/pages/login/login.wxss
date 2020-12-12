@@ -102,17 +102,19 @@ color: rgb(143, 143, 143);
   font-size: 39rpx;
 }
 #btn3{
+
   position: relative;
-  top:280rpx;
+  top:350rpx;
   left:200rpx;
   width:250rpx;
   background-color: rgb(245, 245, 245);
 }
 #btn3::after{
   border: none;
+
 }
 #btn3 text{
   color:black;
-  font-size: 38rpx;
+  font-size: 20rpx;
   position: relative;
 }

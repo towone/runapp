@@ -14,8 +14,8 @@ Page({
    */
   onLoad: function (options) {
 
-    var myDate = new Date();
-    console.log(myDate.toLocaleString())
+    // var myDate = new Date();
+    // console.log(myDate.toLocaleString())
     const db = wx.cloud.database()
     db.collection('class').where({
       Sno: wx.getStorageSync('Sno')
@@ -26,7 +26,6 @@ Page({
             ClassNum: res.data[0].ClassNum
           }).get({
             success:(res)=>{//根据班级号找到班级名
-              console.log(res)
               db.collection('notice').where({//根据班级名得到应该收到的公告
                 class:res.data[0].Info
               }).get({

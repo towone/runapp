@@ -23,20 +23,21 @@
 <view id="t4">
 <text>目标公里</text><input  name="password3" id="pass3"  value="{{aid}}" disabled="true"></input>
 </view>
+
 <view id="t5">
   <text>状态</text>
   <!-- 下拉框 -->
     <view class='select_box'>
-      <view class='select' catchtap='selectTaps'>
-        <text class='select_text'>{{selectDatas[indexs]}}</text>
-      
-      </view>
-      <view class='option_box' style='height:{{shows?(selectDatas.length>5?300:selectDatas.length*60):0}}rpx;'>
-        <text class='option' style='{{indexs==selectDatas.length-1&&"border:0;"}}' wx:for='{{selectDatas}}' wx:key='this' data-index='{{index}}' catchtap='optionTaps'>{{item}}</text>
-      </view>
-    </view>
+		<view class='select' catchtap='selectTaps'>
+			<text class='select_text'>{{selectDatas[indexs]}}</text>
+		</view>
+		<view class='option_box' style='height:{{shows?(selectDatas.length>5?300:selectDatas.length*60):0}}rpx;'>
+			<text class='option' style='{{indexs==selectDatas.length-1&&"border:0;"}}' wx:for='{{selectDatas}}' wx:key='this' data-index='{{index}}' catchtap='optionTaps'>{{item}}</text>
+		</view>
+	</view>
 </view>
-<button id="btn1" form-type="submit"><text>修改</text></button>
+
+<button id="btn1" form-type="submit" bindtap="update"><text>修改</text></button>
 </form>
 
 </view>

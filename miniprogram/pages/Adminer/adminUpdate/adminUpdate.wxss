@@ -147,6 +147,7 @@ color: rgb(143, 143, 143);
   margin-left: 150rpx;
   position: relative;
   bottom: 60rpx;
+  left: 90rpx;
 }
 
 .select {

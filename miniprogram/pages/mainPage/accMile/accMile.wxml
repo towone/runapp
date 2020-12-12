@@ -1,4 +1,4 @@
-<map id="map" longitude="{{long}}" latitude="{{la}}" scale="15" polyline="{{polyline}}"show-location style="width: 100%; height: 300px;"></map>
+<map id="map" longitude="{{long}}" latitude="{{la}}" scale="15" polygons="{{polygon}}" polyline="{{polyline}}"show-location style="width: 100%; height: 300px;"></map>
 <image id="i0" src="/images/distance.png"></image>
 <view id="t1">
 	<text id="shijian">距离:</text>

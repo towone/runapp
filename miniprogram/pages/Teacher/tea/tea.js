@@ -17,7 +17,7 @@ Page({
       indexs: Indexs,
       shows: !this.data.shows
     });
-    wx.setStorageSync('class', this.data.selectDatas[Indexs])
+  
 
   },
   data: {

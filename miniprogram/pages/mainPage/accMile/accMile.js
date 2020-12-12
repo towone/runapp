@@ -14,13 +14,20 @@ Page({
     password2: 0,
     min: 9,
     sec: 55,
-    long: wx.getStorageSync('long'), //经度-180 -- 180
-    la: wx.getStorageSync('la'), //纬度-90 --  90
+    long: 1, //经度-180 -- 180
+    la: 1, //纬度-90 --  90
     polyline: [{
       points: [],
       color: '#99FF00',
       width: 5,
       dottedLine: false
+    }],
+    polygon:[{
+     
+      points:[{latitude:30.824,longitude:104.151},{latitude:30.824,longitude:104.159},{latitude:30.825,longitude:104.159},{latitude:30.825,longitude:104.158},],
+
+      strokeWidth:5,
+      strokeColor:'#99FF00'
     }]
   },
   pause: function () {
@@ -68,12 +75,15 @@ Page({
           long: res.longitude,
           la: res.latitude,
         })
+        wx.setStorageSync('long', that.data.long)
+        wx.setStorageSync('la', that.data.la)
       }
     })
   },
   repeat: function () {
     that.setData({ //秒数自增1
-      sec: that.data.sec += 1
+      sec: that.data.sec += 1,
+      distance:Math.round((that.data.distance+=0.05)*100)/100
     })
     if (that.data.sec % 60 == 0) { //计算分钟数
       that.setData({
@@ -88,7 +98,6 @@ Page({
       speed_min: speed_min,
       speed_sec: speed_sec
     })
-    console.log('dsfs')
     // long+=0.1
     // la+=0.1
     that.getlocation()
@@ -106,7 +115,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      long:wx.getStorageSync('long'),
+      la:wx.getStorageSync('la')
+    })
     that = this
     // var long=wx.getStorageSync('long')
     // var la=wx.getStorageSync('la')
@@ -125,14 +137,14 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    // this.timer = setInterval(that.repeat, 1000);
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    clearInterval(this.timer)
   },
 
   /**
