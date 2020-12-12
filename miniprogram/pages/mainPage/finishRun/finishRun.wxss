@@ -1,95 +1,66 @@
-#i0{
-  width:100rpx;
-  height:100rpx;
+
+#i0 {
+  width: 50rpx;
+  height: 50rpx;
   position: relative;
-left: 224rpx;
-  top:463rpx;
-  background-color: white;
+  left: 275rpx;
+  top: 20rpx;
+
 }
-#t1{
-  width:200rpx;
-  height:100rpx;
+#t1 {
+  width: 200rpx;
+  height: 50rpx;
   left: 325rpx;
-  background-color: white;
-  position: relative;
-  top:363rpx;
-}
-#i1{
-  width:100rpx;
-  height:100rpx;
+  bottom: 40rpx;
   position: relative;
 
-  top:500rpx;
-}
-#t2{
-  width:200rpx;
-  height:100rpx;
-  left: 98rpx;
-  background-color: white;
-  top:401rpx;
-  position: relative;
-}
-#i2{
-  width:100rpx;
-  height:100rpx;
-  position: relative;
-left: 452rpx;
-  top:302rpx;
-}
-#t3{
-  width:400rpx;
-  height:100rpx;
-  left: 550rpx;
-  background-color: white;
-  position: relative;
-  top:203rpx;
 }
 
-#t1 text{
-position: relative;
-left:10rpx;
-top:30rpx;
-color: rgb(143, 143, 143);
-}
-#use{
-  width:400rpx;
-  height:80rpx;
-  margin-left: 200rpx;
+#i1 {
+  width: 50rpx;
+  height: 50rpx;
   position: relative;
-  bottom: 25rpx;
-}
-#t2 text{
-position: relative;
-left:20rpx;
-top:30rpx;
-color: rgb(143, 143, 143);
-}
-#pass1{
-  width:400rpx;
-  height:80rpx;
-  margin-left: 200rpx;
-  position: relative;
-  bottom: 25rpx;
+  left: 50rpx;
+  top: 100rpx;
+
 }
 
-#t3 text{
-position: relative;
-left:20rpx;
-top:30rpx;
-color: rgb(143, 143, 143);
-}
-#pass2{
-  width:400rpx;
-  height:80rpx;
-  margin-left: 200rpx;
+#t2 {
+  width: 200rpx;
+  height: 50rpx;
+  left: 50rpx;
+
+top: 40rpx;
   position: relative;
-  bottom: 25rpx;
+}
+
+#i2 {
+  width: 50rpx;
+  height: 50rpx;
+  position: relative;
+  left: 460rpx;
+
+}
+#finish{
+  width:740rpx ;
+  border: solid 2rpx black;
+  position: relative;
+  left: 5rpx;
+}
+#t3 {
+  width: 400rpx;
+  height: 50rpx;
+  left: 515rpx;
+  position: relative;
+  bottom: 60rpx;
+}
+#time{
+  font-size: 50rpx;
+  position: relative;
+  left: 10rpx;
 }
 #t4{
-  width:400rpx;
-  height:150rpx;
-  left: 182rpx;
-  background-color: white;
+  width: 650rpx;
   position: relative;
-  top:263rpx;
+  left: 50rpx;
 }

@@ -6,13 +6,13 @@ Page({
    */
   data:{
     userListInfo:[{
-      icon:"/images/跑步记录.png",
+      icon:"/images/runHis.png",
       text:'跑步记录'
     },{
-      icon:"/images/通知公告.png",
+      icon:"/images/publishNotice.png",
       text:'通知公告'
     },{
-      icon:"/images/修改密码.png",
+      icon:"/images/updatePwd.png",
       text:'修改密码'
     },{
       icon:"/images/联系客服.png",

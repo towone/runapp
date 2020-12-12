@@ -1,4 +1,5 @@
 var that
+var i = 0
 // pages/mainPage/accMile/accMile.js
 Page({
 
@@ -6,64 +7,111 @@ Page({
    * 页面的初始数据
    */
   data: {
-    password2:0,
-    min:9,
-    sec:55,
-    long: wx.getStorageSync('long'),//经度-180 -- 180
-    la:wx.getStorageSync('la') ,//纬度-90 --  90
-    polyline : [{
-      points : [],
-       color : '#99FF00',
-       width : 5,
-       dottedLine : false
-   }]
+    distance: 2.0,
+    speed_min: 1.0,
+    speed_sec: 1.0,
+    pause: '暂停',
+    password2: 0,
+    min: 9,
+    sec: 55,
+    long: wx.getStorageSync('long'), //经度-180 -- 180
+    la: wx.getStorageSync('la'), //纬度-90 --  90
+    polyline: [{
+      points: [],
+      color: '#99FF00',
+      width: 5,
+      dottedLine: false
+    }]
   },
-  end: function () {
-    wx.navigateTo({
-      url: '../finishRun/finishRun',
-    })
-  },
-getlocation:function(){
-  wx.getLocation({
-    altitude: 'altitude',
-    success:(res)=>{
-      that.setData({
-        long:res.longitude,
-        la:res.latitude,
+  pause: function () {
+    if (that.data.pause == '暂停') {
+      clearInterval(this.timer),
+        this.setData({
+          pause: '继续'
+        })
+    } else {
+      this.timer = setInterval(that.repeat, 1000);
+      this.setData({
+        pause: '暂停'
       })
     }
-  })
-},
+  },
+  end: function () {
+    clearInterval(this.timer);
+    wx.showModal({
+      title: '提示',
+      content: '是否结束跑步？',
+      success: (res) => {
+        if (res.confirm) {
+          wx.setStorageSync('distance', that.data.distance)
+          wx.setStorageSync('speed_min', that.data.speed_min)
+          wx.setStorageSync('speed_sec', that.data.speed_sec)
+          wx.setStorageSync('min', that.data.min)
+          wx.setStorageSync('sec', that.data.sec)
+          wx.navigateTo({
+            url: '../finishRun/finishRun',
+          })
+        }
+        else if(res.cancel){
+          this.timer=setInterval(that.repeat,1000)
+        }
+      }
+    })
+
+
+  },
+  getlocation: function () {
+    wx.getLocation({
+      altitude: 'altitude',
+      success: (res) => {
+        that.setData({
+          long: res.longitude,
+          la: res.latitude,
+        })
+      }
+    })
+  },
+  repeat: function () {
+    that.setData({ //秒数自增1
+      sec: that.data.sec += 1
+    })
+    if (that.data.sec % 60 == 0) { //计算分钟数
+      that.setData({
+        min: that.data.min += 1,
+        sec: 0
+      })
+    }
+
+    var speed_min = Math.floor((that.data.min + that.data.sec / 60) / that.data.distance)
+    var speed_sec = Math.round(((that.data.min + that.data.sec / 60) / that.data.distance - speed_min) * 60)
+    this.setData({
+      speed_min: speed_min,
+      speed_sec: speed_sec
+    })
+    console.log('dsfs')
+    // long+=0.1
+    // la+=0.1
+    that.getlocation()
+    that.setData({
+      ['polyline[0].points[' + i + ']']: {
+        latitude: that.data.la,
+        longitude: that.data.long
+      },
+
+    })
+    i += 1
+
+  },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) { 
-    
-    that=this
+  onLoad: function (options) {
+
+    that = this
     // var long=wx.getStorageSync('long')
     // var la=wx.getStorageSync('la')
-    var i=0
-    this.timer = setInterval(repeat, 1000);
-    function repeat(){ 
-      that.setData({
-        sec:that.data.sec+=1
-      }) 
-      
-      if(that.data.sec%60==0){
-        that.setData({
-          min:that.data.min+=1,
-          sec:0
-        })
-      }
-      console.log('dsfs')
-      // long+=0.1
-      // la+=0.1
-      that.getlocation()     
-      that.setData({
-        ['polyline[0].points['+i+']']:{latitude: that.data.la, longitude: that.data.long}
-      })
-      i+=1
-    }
+    this.timer = setInterval(that.repeat, 1000);
+
   },
 
   /**

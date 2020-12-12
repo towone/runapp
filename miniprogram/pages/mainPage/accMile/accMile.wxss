@@ -12,14 +12,16 @@
 }
 
 #time{
-  margin-left: 10rpx;
+  position: relative;
   font-size: 50rpx;
+  width: 200rpx;
+  left: 20rpx;
 }
 #t1 {
   width: 200rpx;
   height: 50rpx;
   left: 325rpx;
-  bottom: 30rpx;
+  bottom: 40rpx;
   position: relative;
 
 }
@@ -38,7 +40,7 @@
   height: 50rpx;
   left: 98rpx;
 
-top: 50rpx;
+top: 40rpx;
   position: relative;
 }
 

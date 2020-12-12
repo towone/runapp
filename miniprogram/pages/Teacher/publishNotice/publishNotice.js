@@ -24,7 +24,7 @@ Page({
           if (this.data.notice == '') {
             wx.showToast({
               title: '公告内容为空',
-              image: '../../../images/错误.png'
+              image: '../../../images/error.png'
             })
           } else {
             const db = wx.cloud.database()
@@ -42,7 +42,7 @@ Page({
               fail: (err) => {
                 wx.showToast({
                   title: '发布失败',
-                  image: '../../../images/错误.png',
+                  image: '../../../images/errer.png',
                  
                 })
               }

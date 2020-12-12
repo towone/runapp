@@ -1,22 +1,22 @@
 <map id="map" longitude="{{long}}" latitude="{{la}}" scale="15" polyline="{{polyline}}"show-location style="width: 100%; height: 300px;"></map>
-<image id="i0" src="/images/距离.png"></image>
+<image id="i0" src="/images/distance.png"></image>
 <view id="t1">
-	<text>距离:</text>
-  <input type="text" name="distance" id="use" placeholder="" value="{{username}}"></input>
+	<text id="shijian">距离:</text>
+  <text id="time">{{distance}}km</text>
 </view>
 
-<image id="i1" src="/images/速度.png"></image>
+<image id="i1" src="/images/speed.png"></image>
 <view id="t2">
-	<text>配速:</text>
-  <input type="password" name="speed" id="pass1" value="{{password1}}"></input>
+	<text id="shijian">配速:</text>
+  <text id="time">{{speed_min}}'{{speed_sec}}"</text>
 </view>
 
-<image id="i2" src="/images/时间.png"></image>
+<image id="i2" src="/images/time.png"></image>
 <view id="t3">
 	<text id="shijian">时间:</text>
   <text id="time">{{min}}:{{sec}}</text>
 </view>
 
 
-<button id="btn1" form-type="submit"><text>暂停</text></button>
+<button id="btn1" form-type="submit" bindtap="pause"><text>{{pause}}</text></button>
 <button id="btn2" form-type="submit" bindtap="end"><text>结束</text></button>

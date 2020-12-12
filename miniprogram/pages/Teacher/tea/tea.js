@@ -25,16 +25,16 @@ Page({
     selectDatas: ['yiersan'], //下拉列表的数据
     indexs: 0, //选择的下拉列 表下标,
     userListInfo: [{
-      icon: "/images/通知公告.png",
+      icon: "/images/publishNotice.png",
       text: '发布通知'
     }, {
-      icon: "/images/完成情况.png",
+      icon: "/images/classRate.png",
       text: '查看完成情况'
     }, {
-      icon: "/images/创建班级.png",
+      icon: "/images/createClass.png",
       text: '创建班级'
     }, {
-      icon: "/images/修改密码.png",
+      icon: "/images/update.png",
       text: '修改密码'
     }]
   },

@@ -7,16 +7,16 @@ Page({
 
   data: {
     userListInfo: [{
-      icon: "/images/重置.png",
+      icon: "/images/reset.png",
       text: '重置用户密码'
     }, {
-      icon: "/images/查询.png",
+      icon: "/images/select.png",
       text: '查询跑步数据'
     }, {
       icon: "/images/注销.png",
       text: '注销用户账号'
     }, {
-      icon: "/images/修改.png",
+      icon: "/images/update.png",
       text: '修改学生信息'
     }]
   },

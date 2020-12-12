@@ -1,5 +1,9 @@
 {
-  "pages": [            
+
+     
+
+  "pages": [         
+
     "pages/login/login",
     "pages/register/register",
     "pages/resetPwd/resetPwd",
