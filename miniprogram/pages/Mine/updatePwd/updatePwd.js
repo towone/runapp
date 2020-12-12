@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    username:wx.getStorageSync('Sno'),
+    
+    username:'',
     oldpwd:'',
     newpwd:'',
     connewpwd:''
@@ -97,7 +98,9 @@ else{
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      username:wx.getStorageSync('Sno')
+    })
   },
 
   /**

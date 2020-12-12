@@ -6,6 +6,7 @@ Page({
    */
   data: {
     //顶部安全距离（状态栏高度）
+    class:'',
     statusBarHeight: wx.getSystemInfoSync().statusBarHeight,
      list: [
       //  {
@@ -39,6 +40,9 @@ Page({
   },
 
   onLoad: function (options) {
+    this.setData({
+      class:wx.getStorageSync('class')
+    })
     var that = this;
     const db = wx.cloud.database();
     const testDB = wx.cloud.database({

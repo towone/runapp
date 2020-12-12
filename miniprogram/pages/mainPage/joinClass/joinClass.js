@@ -37,7 +37,7 @@ Page({
         }else{
           wx.showToast({
             title: '不存在此班级',
-            image:'../../../images/错误.png'
+            image:'../../../images/error.png'
           })
         }
       }

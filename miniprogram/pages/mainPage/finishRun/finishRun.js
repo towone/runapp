@@ -5,18 +5,24 @@ Page({
    * 页面的初始数据
    */
   data: {
-    distance: wx.getStorageSync('distance'),
-    speed_min: wx.getStorageSync('speed_min'),
-    speed_sec: wx.getStorageSync('speed_sec'),
-    min: wx.getStorageSync('min'),
-    sec: wx.getStorageSync('sec'),
+    distance:'',
+    speed_min: '',
+    speed_sec: '',
+    min: '',
+    sec: '',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      distance: wx.getStorageSync('distance'),
+      speed_min: wx.getStorageSync('speed_min'),
+      speed_sec: wx.getStorageSync('speed_sec'),
+      min: wx.getStorageSync('min'),
+      sec: wx.getStorageSync('sec'),
+    })
   },
 
   /**

@@ -1,4 +1,4 @@
-<view>班级完成情况</view>
+<view>{{class}}完成情况</view>
 <view style="margin-top:-9rpxpx;padding-top:10rpx">
   <view class="top-bg"></view>
   <view class="box-list">

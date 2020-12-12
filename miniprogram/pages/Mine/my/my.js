@@ -15,10 +15,7 @@ Page({
       icon:"/images/updatePwd.png",
       text:'修改密码'
     },{
-      icon:"/images/联系客服.png",
-      text:'联系客服'
-    },{
-      icon:"/images/face 人脸识别.png",
+      icon:"/images/face.png",
       text:'人脸注册'
     }
     ]
@@ -43,12 +40,7 @@ Page({
             url: '../updatePwd/updatePwd',
           });
             break;
-        case '3':
-          wx.navigateTo({
-            url: '../connectAdm/connectAdm',
-          });
-            break;
-            case '4':
+            case '3':
               wx.navigateTo({
                 url: '../faceRegis/faceRegis',
               })

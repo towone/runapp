@@ -28,7 +28,7 @@
 #t2 {
   width: 200rpx;
   height: 50rpx;
-  left: 50rpx;
+  left: 100rpx;
 
 top: 40rpx;
   position: relative;

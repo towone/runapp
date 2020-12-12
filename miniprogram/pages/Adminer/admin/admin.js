@@ -13,9 +13,6 @@ Page({
       icon: "/images/select.png",
       text: '查询跑步数据'
     }, {
-      icon: "/images/注销.png",
-      text: '注销用户账号'
-    }, {
       icon: "/images/update.png",
       text: '修改学生信息'
     }]
@@ -51,11 +48,6 @@ Page({
         break;
       case '2':
         wx.navigateTo({
-          url: '../adminCanel/adminCanel',
-        });
-        break;
-      case '3':
-        wx.navigateTo({
           url: '../adminUpdate/adminUpdate',
         });
         break;
@@ -80,7 +72,7 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    this.onUnload()
   },
 
   /**
@@ -101,7 +93,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    
   },
 
   /**

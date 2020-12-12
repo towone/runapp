@@ -37,17 +37,22 @@ Page({
           var ulist = res.data.result
           if (ulist.user_list != null) {
             var result = ulist.user_list[0].score
-            if (result > 80) {
+            if (result > 80&&ulist.user_list[0].user_id==wx.getStorageSync('Sno')) {
               wx.showToast({
                 title: '验证通过',
                 icon: 'success',
                 duration: 500
               })
-              wx.navigateTo({
+              wx.redirectTo({
                 url: '../accMile/accMile',
               })
             }else(
-              console.log('不匹配')
+              wx.showToast({
+                title: '请不要代打卡！',
+                image :'../../../images/error.png'
+                
+              })
+
             )
           }
         } else {
@@ -88,7 +93,7 @@ Page({
 
     //失败尝试
     wx.showToast({
-      title: '注册中...',
+      title: '认证中...',
       icon: 'loading',
       duration: 1000
     })
