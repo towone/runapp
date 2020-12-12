@@ -16,9 +16,9 @@ Page({
     this.setData({
       indexs: Indexs,
       shows: !this.data.shows
-    });
-  
 
+    });
+    wx.setStorageSync('class', this.data.selectDatas[Indexs]) 
   },
   data: {
     shows: false, //控制下拉列表的显示隐藏，false隐藏、true显示
