@@ -1,8 +1,8 @@
 <!--pages/Mine/announceMent/announceMent.wxml-->
-<block wx:for="{{list}}" class='bk'>
-	<view class="tr bg-g">
-		<view class="td">{{item.class}}</view>
-		<view class="td">{{item.time}}</view>
-		<view class="td">{{item.Content}}</view>
+<view wx:for="{{list}}" class="news-item">
+	<view class="news-item-left">
+		<view class="news-item-title">{{item.class}}</view>
+		<view class="news-item-title">{{item.time}}</view>
+		<view class="news-item-title">{{item.Content}}</view>
 	</view>
-</block>
+	</view>

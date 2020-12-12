@@ -57,6 +57,7 @@ update:function(){
   }).get({
     success:(res)=>{
       console.log(res)
+      console.log(this.data.selectDatas[this.data.indexs])
       db.collection('runRat').doc(res.data[0]._id).update({
         data:{
           status:this.data.selectDatas[this.data.indexs]
