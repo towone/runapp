@@ -1,4 +1,4 @@
-// pages/Mine/connectAdm/connectAdm.js
+
 Page({
 
   /**

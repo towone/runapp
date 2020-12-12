@@ -1,6 +1,5 @@
 {
-  "pages": [       
-
+  "pages": [            "pages/Mine/faceRegis/faceRegis", 
     "pages/login/login",
     "pages/register/register",
     "pages/resetPwd/resetPwd",
@@ -13,7 +12,7 @@
 
     "pages/Mine/my/my",
     "pages/Mine/updatePwd/updatePwd",
-    "pages/Mine/connectAdm/connectAdm",
+
     "pages/Mine/announceMent/announceMent",
     "pages/Mine/runHis/runHis",
 
@@ -57,5 +56,10 @@
     ]
   },
   "sitemapLocation": "sitemap.json",
-  "style": "v2"
+  "style": "v2",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示" 
+    }
+  }
 }

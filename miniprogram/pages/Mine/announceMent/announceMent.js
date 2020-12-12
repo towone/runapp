@@ -17,6 +17,7 @@ list:[]
     const testDB = wx.cloud.database({
       env: 'hsb'
     });
+    
     db.collection('class').where({
       Sno:wx.getStorageSync('Sno')
     }).get().then(res=>{
