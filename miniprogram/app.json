@@ -1,5 +1,5 @@
 {
-  "pages": [            "pages/Mine/faceRegis/faceRegis", 
+  "pages": [            
     "pages/login/login",
     "pages/register/register",
     "pages/resetPwd/resetPwd",
@@ -12,7 +12,7 @@
 
     "pages/Mine/my/my",
     "pages/Mine/updatePwd/updatePwd",
-
+    "pages/Mine/faceRegis/faceRegis", 
     "pages/Mine/announceMent/announceMent",
     "pages/Mine/runHis/runHis",
 

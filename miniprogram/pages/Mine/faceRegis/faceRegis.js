@@ -5,9 +5,80 @@ Page({
    * 页面的初始数据
    */
   data: {
+    nickName: "",
+    src: "", //图片的链接
+    token: "",
+    base64: "",
+    msg: ""
+  },
+  myrquest: function () {
+    var that = this;
+    this.setData({
+      token: '24.31573b478477b914bb1f35a164c0eb40.2592000.1610185144.282335-23130383'
+    })
+    wx.request({
+      url: 'https://aip.baidubce.com/rest/2.0/face/v3/faceset/user/add?access_token=' + that.data.token,
+      method: 'POST',
+      data: {
+        image: that.data.base64,
+        image_type: 'BASE64',
+        group_id: 'facedatabase', //自己的组id
+        user_id:wx.getStorageSync('Sno')
+      },
+      header: {
+        'Content-Type': 'application/json' // 默认值
+      },
+      success(res) {
+        var errorcode = res.data.error_code
+        //做成功判断
+        if (errorcode == 0) {
+          wx.showToast({
+            title: '注册成功',
+            duration:500
+          })
+          wx.navigateBack({
+            delta:1
+          })
+        } else {
+          console.log(res)
+        }
+      }
+    })
 
   },
+  takePhoto: function () {
+    var that = this;
+    //拍照
+    const ctx = wx.createCameraContext()
+    ctx.takePhoto({
+      quality: 'medium', //使用small可以加快速度
+      success: (res) => {
+        that.setData({
+          src: res.tempImagePath //获取图片
+        })
 
+        //图片base64编码
+        wx.getFileSystemManager().readFile({
+          filePath: that.data.src, //选择图片返回的相对路径
+          encoding: 'base64', //编码格式
+          success: res => { //成功的回调
+            that.setData({
+              base64: res.data
+            })
+            that.myrquest(); //拍照之后，调用上传函数，获取token上传人脸
+          }
+        })
+      } //拍照成功结束
+
+    }) //调用相机结束
+
+    //失败尝试
+    wx.showToast({
+      title: '注册中...',
+      icon: 'loading',
+      duration: 1000
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

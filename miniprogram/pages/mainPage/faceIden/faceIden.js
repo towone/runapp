@@ -43,8 +43,8 @@ Page({
                 icon: 'success',
                 duration: 500
               })
-              wx.switchTab({
-                url: '../accMile/accMile' //自己的
+              wx.navigateTo({
+                url: '../accMile/accMile',
               })
             }else(
               console.log('不匹配')

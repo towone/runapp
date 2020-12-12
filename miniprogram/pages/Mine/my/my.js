@@ -17,6 +17,9 @@ Page({
     },{
       icon:"/images/联系客服.png",
       text:'联系客服'
+    },{
+      icon:"/images/face 人脸识别.png",
+      text:'人脸注册'
     }
     ]
       },
@@ -45,6 +48,10 @@ Page({
             url: '../connectAdm/connectAdm',
           });
             break;
+            case '4':
+              wx.navigateTo({
+                url: '../faceRegis/faceRegis',
+              })
    } 
       },
     onLoad: function(){
